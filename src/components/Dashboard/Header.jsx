@@ -11,7 +11,7 @@ const Header = () => {
 
     const [isIndividual, setIsIndividual] = React.useState(false)
     const [isCompany, setIsCompany] = React.useState(true)
-    const [isNGO, setIsNGO] = React.useState(false)
+    const [isNGO, setIsNGO] = React.useState(true)
     
     const [previousDonations, setPreviousDonations] = React.useState([
         {

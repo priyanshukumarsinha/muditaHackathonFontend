@@ -129,8 +129,8 @@ const Header = () => {
             </section>
 
             <section className='w-full bg-background text-white flex flex-col lg:flex-row items-center py-20' id="Contact">
-                <div className='lg:w-2/4 w-full px-10 lg:px-20'>
-                    <h2 className='text-4xl font-bold mb-5 text-orange-300'>Contact US</h2>
+                <div className='lg:w-3/5 w-full px-10 lg:px-20'>
+                    <h2 className='text-6xl font-bold mb-5 text-orange-300'>Contact US</h2>
                     <div className='mt-4' style={{ fontSize: '2rem' }}>
                         <p><strong>Email:</strong> <a href='mailto:info@mudita.com' className='text-blue-500'>info@mudita.com</a></p>
                         <p><strong>Phone:</strong> <a href='tel:+917827191427' className='text-blue-500'>+91 7827191427</a></p>
@@ -141,7 +141,7 @@ const Header = () => {
                         <a href="/" className='text-2xl'><FaGithub /></a>
                     </div> 
                 </div>
-                <div className='lg:w-2/4 w-full mt-10 lg:mt-0 flex justify-center items-center'>
+                <div className='lg:w-2/5 w-full mt-10 lg:mt-0 flex justify-center items-center'>
                     <img src={call} alt="Contact US" className='w-38 h-auto object-cover' />
                 </div>
             </section>
