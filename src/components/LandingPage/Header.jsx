@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Navbar } from '../index.js';
-import { poor, logo, flow, ignore, a, b, c, d, e } from '../../assets';
+import { poor, logo, flow, ignore, a, b, c, d, e, call } from '../../assets';
 import { FaInstagram, FaGithub } from 'react-icons/fa';
 import { CiLinkedin } from 'react-icons/ci';
 import Login from '../Login/Login.jsx';
@@ -90,7 +90,7 @@ const Header = () => {
                 </div>
             </section>
 
-            <section className='w-full bg-background text-white flex flex-col items-center py-20'>
+            <section className='w-full bg-background text-white flex flex-col items-center py-20' id="work">
                 <div className='w-full px-10 lg:px-20'>
                     <h2 className='text-4xl font-bold mb-5 text-orange-300'>Our Workflow</h2>
                     <img src={flow} alt="About Us" className="relative w-full h-auto object-cover rounded-lg border-4 border-[#E2C493] shadow-lg z-0" />
@@ -123,6 +123,24 @@ const Header = () => {
                     <p className='text-lg mt-5 text-center'>
                         Highlighting the spirits of Past Memories.
                     </p>
+                </div>
+            </section>
+
+            <section className='w-full bg-background text-white flex flex-col lg:flex-row items-center py-20' id="Contact">
+                <div className='lg:w-2/4 w-full px-10 lg:px-20'>
+                    <h2 className='text-4xl font-bold mb-5 text-orange-300'>Contact US</h2>
+                    <div className='mt-4' style={{ fontSize: '2rem' }}>
+                        <p><strong>Email:</strong> <a href='mailto:info@mudita.com' className='text-blue-500'>info@mudita.com</a></p>
+                        <p><strong>Phone:</strong> <a href='tel:+917827191427' className='text-blue-500'>+91 7827191427</a></p>
+                    </div>
+                    <div className='mt-4 flex space-x-4'>
+                        <a href="/" className='text-2xl'><FaInstagram /></a>
+                        <a href="/" className='text-2xl'><CiLinkedin /></a>
+                        <a href="/" className='text-2xl'><FaGithub /></a>
+                    </div> 
+                </div>
+                <div className='lg:w-2/4 w-full mt-10 lg:mt-0 flex justify-center items-center'>
+                    <img src={call} alt="Contact US" className='w-38 h-auto object-cover' />
                 </div>
             </section>
 
