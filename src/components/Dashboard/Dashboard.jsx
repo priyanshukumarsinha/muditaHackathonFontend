@@ -3,7 +3,7 @@ import { Header } from '../Dashboard/'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className='w-full h-full'>
         <Header />
     </div>
   )
