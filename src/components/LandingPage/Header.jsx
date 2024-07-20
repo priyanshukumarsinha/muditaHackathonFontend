@@ -34,12 +34,14 @@ const Header = () => {
                     <div className="quote lg:w-1/2 w-full">
                         <h1 className='text-4xl lg:text-6xl font-bold text-orange-300'>Hunger to Hope</h1>
                         <p className='text-md text-white/60 my-5'>Feed the need, clothe the cause, <span className=''>and join us in making a lasting impact.</span></p>
-                        <div className="buttons flex flex-col lg:flex-row gap-5 mt-10 lg:mt-28">
+                        <p className='text-md text-white/60 my-5'>Together, we can stitch a future where no one goes hungry.<span className=''></span></p>
+                        <p className='text-md text-white/60 my-5'>Every thread of support helps us dress the world with hope and nourishment<span className=''></span></p>
+                        <div className="buttons flex flex-col lg:flex-row gap-5 mt-10 lg:mt-15">
                             <Button text={'Donate'} onClick={() => { setShowLogin(true); setSearch('Organization / Company'); }} />
                             <Button text={'Login as Individual'} onClick={() => { setShowLogin(true); setSearch('Individual / Volunteer'); }} />
                             <Button text={'Login as NGO'} onClick={() => { setShowLogin(true); setSearch('NGO'); }} />
                         </div>
-                        <div className="social flex gap-5 mt-10 text-orange-300 text-xl">
+                        <div className="social flex gap-5 mt-5 text-orange-300 text-xl">
                             <a href="/"><FaInstagram /></a>
                             <a href="/"><CiLinkedin /></a>
                             <a href='/'><FaGithub /></a>
