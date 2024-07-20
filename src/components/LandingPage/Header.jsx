@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+    Button,
     Navbar,
 }
 from '../index.js'
@@ -16,11 +17,27 @@ import {
     CiLinkedin
 } from 'react-icons/ci'
 
+
+import Login from '../Login/Login.jsx'
+import Signup from '../Signup/Signup.jsx'
+
  
 
 const Header = () => {
+    const [showLogin, setShowLogin] = React.useState(false)
+    const [showSignup, setShowSignup] = React.useState(false)
+    const [search, setSearch] = React.useState('')
   return (
-    <header className='w-full bg-background h-screen'>
+    <header className='w-full bg-background h-screen relative flex flex-col justify-center items-center'>
+        
+        {
+            showLogin && <Login setShowLogin= {setShowLogin} search = {search} setShowSignup= {setShowSignup}/>
+        }
+
+        {
+            showSignup && <Signup setShowLogin= {setShowLogin} search = {search} setShowSignup= {setShowSignup}/>
+        }
+
         {/* Header Contains Navbar and one other container*/}
         {/* The Other Container contains a quote and an image */}
         {/* Below the Quote we have 3 buttons which basically makes you login, but if you are already logged in it redirects you to the dashboard */}
@@ -37,9 +54,9 @@ const Header = () => {
                     <h1 className='text-6xl font-bold text-orange-300'>Hunger to Hope</h1>
                     <p className='text-md text-white/60 my-5'>Feed the need, clothe the cause, <span className=''>and join us in making a lasting impact.</span></p>
                     <div className="buttons flex gap-5 mt-28">
-                        <button className='border p-2 px-5 rounded-md  hover:text-white hover:bg-transparent bg-white text-black'>Donate</button>
-                        <button className='border p-2 px-5 rounded-md  hover:text-white hover:bg-transparent bg-white text-black'>Sign up as Individual</button>
-                        <button className='border p-2 px-5 rounded-md  hover:text-white hover:bg-transparent bg-white text-black'>Sign up as NGO</button>
+                        <Button text={'Donate'} onClick={() => {setShowLogin(true); setSearch('Organization / Company')}} />
+                        <Button text={'Login as Individual'} onClick={() => {setShowLogin(true); setSearch('Individual / Volunteer')}} />
+                        <Button text={'Login as NGO'} onClick={() => {setShowLogin(true); setSearch('NGO')}} />
                     </div>
                     <div className="social flex gap-5 mt-10 text-orange-300 text-xl">
                         <a href="/"><FaInstagram /></a>
