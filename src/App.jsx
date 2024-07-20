@@ -1,34 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Header } from './components/LandingPage'
 
+// This is the Landing Page of the website : where the user will land first
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+        {/* Header */}
+        {/* Header Contains Navbar and one other container*/}
+        {/* The Other Container contains a quote and an image */}
+        {/* Below the Quote we have 3 buttons which basically makes you login, but if you are already logged in it redirects you to the dashboard */}
+        {/* The Navbar contains the logo of the website and 2 buttons and some links */}
+
+        <Header />
+        
+
+
+
+
+    </div>
   )
 }
 
