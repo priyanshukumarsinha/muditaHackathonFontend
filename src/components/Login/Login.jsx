@@ -28,7 +28,7 @@ const Login = ({ setShowLogin, search, setShowSignup }) => {
     <div className='w-full bg-white/30 backdrop-blur-xl flex absolute top-0 justify-center items-center h-screen'>
       <div className='w-full max-w-md bg-white p-6 sm:p-10 md:p-10 rounded-xl relative mx-4 sm:mx-auto'>
         <h1 className='text-xl font-bold text-center pb-5 md:pb-10'>Login as {search}</h1>
-        <form action="" className='flex flex-col gap-4 sm:gap-5 px-4 sm:px-10 md:px-20'>
+        <form action="" className='flex flex-col gap-4 sm:gap-5 px-4 sm:px-10 md:px-5'>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}

@@ -31,7 +31,7 @@ const Signup = ({setShowLogin, search, setShowSignup}) => {
     <div className='w-full bg-white/30 backdrop-blur-xl flex absolute top-0 justify-center items-center h-screen'>
         <div className='w-full max-w-md bg-white p-6 sm:p-10 md:p-5 rounded-xl relative top-20 mx-4 sm:mx-auto'>
             <h1 className='text-xl font-bold text-center pb-5 md:pb-10'>Signup as {search}</h1>
-            <form action="" className='flex flex-col gap-4 sm:gap-5 px-4 sm:px-10 md:px-20'>
+            <form action="" className='flex flex-col gap-4 sm:gap-5 px-4 sm:px-10 '>
                 <input 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
