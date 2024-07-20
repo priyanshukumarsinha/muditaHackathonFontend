@@ -2,13 +2,16 @@ import React from 'react'
 import { RxCross1 } from "react-icons/rx";
 import Button from '../Button';
 import { useNavigate } from 'react-router-dom';
+import { login } from '../../store/authSlice';
+import { useDispatch } from 'react-redux';
 
 const Login = ({ setShowLogin, search, setShowSignup }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const loginUser = (e) => {
+  const loginUser = async(e) => {
     e.preventDefault();
     if (email === '' || password === '') {
       alert('Please fill all the fields');
@@ -19,9 +22,36 @@ const Login = ({ setShowLogin, search, setShowSignup }) => {
     console.log(email, password);
 
     // backend logic here
+            // login the user
+            const loginData = {
+              email,
+              password,
+              type: search == 'NGO' ? 'ngo' : (search == 'Individual / Volunteer' ? 'individual' : 'company')
+          }
+  
+          const loginOptions = {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(loginData),
+          }
+  
+          const loginResponse = await fetch('http://localhost:3000/api/v1/user/login', loginOptions);
+          const loginResData = await loginResponse.json();
+          const loggedInUser = loginResData.data.user;
+  
+          console.log(loggedInUser);
+  
+          localStorage.setItem('accessToken', loggedInUser.accessToken);
+          localStorage.setItem('refreshToken', loggedInUser.refreshToken);
+          localStorage.setItem('user', JSON.stringify(loggedInUser));
+  
+          // dispatch login action
+          dispatch(login(loggedInUser));
+          // redirect to dashboard
+          navigate('/dashboard');
 
-    // redirect to dashboard
-    navigate('/dashboard');
   };
 
   return (

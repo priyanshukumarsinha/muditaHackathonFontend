@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Navbar'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Header = () => {
     const [showPreviousDonations, setShowPreviousDonations] = React.useState(true)
@@ -80,6 +81,14 @@ const Header = () => {
             ],
         }
     ])
+
+    const status = useSelector(state => state.auth.status);
+    const userData = useSelector(state => state.auth.userData);
+    const dispatch = useDispatch();
+
+    if(!status) {
+        dispatch('/')
+    }
 
   return (
     <div className='w-full bg-background'>
