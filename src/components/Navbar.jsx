@@ -4,9 +4,40 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { logout } from '../store/authSlice.js';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const status = useSelector((state) => state.auth.status);
+  const userData = useSelector((state) => state.auth.userData);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logoutUser = () => {
+    // Logout
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+      },      
+    };
+
+    fetch('http://localhost:3000/api/v1/user/logout', option)
+      .then((res) => res.json())
+      .then((data) => {
+          // Clear the user data
+          localStorage.clear();
+          dispatch(logout());
+      })
+      .catch((err) => console.log(err));
+      
+      navigate('/');
+  };
 
   return (
     <nav className='flex z-50 sticky top-0 justify-between border-b bg-background text-white py-5 px-5 lg:px-40 items-center w-full'>
@@ -22,6 +53,15 @@ const Navbar = () => {
           <a href="#Contact">
           <Button text='Contact' />
           </a>
+          {
+            status && (
+              <div
+          onClick={() => logoutUser()}
+          >
+            <Button text= 'Log Out' />
+          </div>
+            )
+          }
         </div>
       <div className='lg:hidden flex items-center'>
         <button onClick={() => setIsOpen(!isOpen)} className='text-2xl'>
@@ -51,6 +91,7 @@ const Navbar = () => {
               </ul>
               <div className="buttons flex flex-col gap-5 mt-5">
                 <Button text='Contact' />
+                <Button text= 'Log Out' />
               </div>
             </div>
           </div>

@@ -31,20 +31,24 @@ const Login = ({ setShowLogin, search, setShowSignup }) => {
   
           const loginOptions = {
               method: 'POST',
+              credentails: 'same-origin',
+
               headers: {
                   'Content-Type': 'application/json'
               },
               body: JSON.stringify(loginData),
           }
-  
+
           const loginResponse = await fetch('http://localhost:3000/api/v1/user/login', loginOptions);
           const loginResData = await loginResponse.json();
           const loggedInUser = loginResData.data.user;
+
+          console.log(loginResData)
   
           console.log(loggedInUser);
   
-          localStorage.setItem('accessToken', loggedInUser.accessToken);
-          localStorage.setItem('refreshToken', loggedInUser.refreshToken);
+          localStorage.setItem('accessToken', loginResData.data.accessToken);
+          localStorage.setItem('refreshToken', loginResData.data.refreshToken);
           localStorage.setItem('user', JSON.stringify(loggedInUser));
   
           // dispatch login action

@@ -55,6 +55,7 @@ const Signup = ({setShowLogin, search, setShowSignup}) => {
 
         const loginOptions = {
             method: 'POST',
+            credentails: 'same-origin',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -67,8 +68,8 @@ const Signup = ({setShowLogin, search, setShowSignup}) => {
 
         console.log(loggedInUser);
 
-        localStorage.setItem('accessToken', loggedInUser.accessToken);
-        localStorage.setItem('refreshToken', loggedInUser.refreshToken);
+        localStorage.setItem('accessToken', loginResData.data.accessToken);
+        localStorage.setItem('refreshToken', loginResData.data.refreshToken);
         localStorage.setItem('user', JSON.stringify(loggedInUser));
 
         // dispatch login action
