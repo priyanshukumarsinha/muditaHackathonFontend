@@ -5,7 +5,7 @@ import { Logo,
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-between bg-background text-white py-5 px-40 items-center w-full'>
+    <nav className='flex justify-between sticky border-b border-orange-300 top-0 bg-background text-white py-5 px-40 items-center w-full'>
         {/* The Navbar contains the logo of the website and 2 buttons and some links */}
         <Logo />
         <ul className='flex gap-5'>
