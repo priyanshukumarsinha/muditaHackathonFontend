@@ -96,7 +96,7 @@ const Header = () => {
             <section className='w-full bg-background text-white flex items-center py-20'>
                 <div className='px-20'>
                     <h2 className='text-4xl font-bold mb-5 text-orange-300'>Our Workflow</h2>
-                    <img src={flow} alt="About Us" className="relative z-10 w-full h-full object-cover rounded-lg absolute top-3 left-3 right-3 bottom-3 border-4 border-[#E2C493] rounded-lg shadow-lg z-0" />
+                    <img src={flow} alt="About Us" className="w-full h-full object-cover top-3 left-3 right-3 bottom-3 border-4 border-[#E2C493] rounded-lg shadow-lg" />
                     <p className='text-lg'>
                         <br>
                         </br>
