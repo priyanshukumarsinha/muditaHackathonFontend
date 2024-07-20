@@ -93,7 +93,7 @@ const Header = () => {
             <section className='w-full bg-background text-white flex flex-col items-center py-20'>
                 <div className='w-full px-10 lg:px-20'>
                     <h2 className='text-4xl font-bold mb-5 text-orange-300'>Our Workflow</h2>
-                    <img src={flow} alt="About Us" className="relative w-full h-auto object-cover rounded-lg border-4 border-[#E2C493] shadow-lg" />
+                    <img src={flow} alt="About Us" className="relative w-full h-auto object-cover rounded-lg border-4 border-[#E2C493] shadow-lg z-0" />
                     <p className='text-lg mt-5'>
                         Our "Hunger to Hope" project workflow includes user registration and login for individuals, companies, and NGOs. Each user type has a dedicated dashboard: individuals can donate items and volunteer, companies can donate, sponsor events, and earn reputation points, while NGOs can conduct events, receive donations, and manage volunteers.
                     </p>
@@ -128,10 +128,11 @@ const Header = () => {
 
             <section className='w-full bg-background text-white flex items-center py-20'>
                 <div className='w-full px-10 lg:px-20 text-center'>
-                    <h2 className='text-4xl font-bold mb-5 text-orange-300'>Together, we can tailor a solution to end hunger and poverty.</h2>
-                    <h1 className='text-4xl font-bold mb-5 text-white-300'>TOGETHER WE GROW!!</h1>
+                    <h2 className='text-2xl lg:text-4xl font-bold mb-5 text-orange-300'>Together, we can tailor a solution to end hunger and poverty.</h2>
+                    <h1 className='text-2xl lg:text-4xl font-bold mb-5 text-white-300'>TOGETHER WE GROW!!</h1>
                 </div>
             </section>
+
         </header>
     );
 }

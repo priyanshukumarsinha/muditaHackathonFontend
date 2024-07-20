@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='flex justify-between border-b bg-background text-white py-5 px-5 lg:px-40 items-center w-full'>
+    <nav className='flex z-50 sticky top-0 justify-between border-b bg-background text-white py-5 px-5 lg:px-40 items-center w-full'>
       <Logo />
       <div className='hidden lg:flex gap-5'>
         <ul className='flex gap-5'>
